@@ -17,6 +17,11 @@ export default StyleSheet.create({
         height: 70
     },
 
+    sadImg: {
+        width: 160,
+        height: 25
+    },
+
     headerText: {
         fontSize: 16,
     },

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import { Feather } from '@expo/vector-icons';
@@ -10,33 +10,31 @@ import styles from './styles';
 import api from '../../services/api';
 
 export default function Countries() {
-    const [incidents, setIncidents] = useState([]);
+    const [countriesIncidents, setCountriesIncidents] = useState([]);
     const navigation = useNavigation();
 
     function navigateToStates() {
         navigation.navigate('States');
     }
 
-    async function loadIncidentsCountries(){
-        const response = await api.get('/report/v1/countries');
+    const loadIncidentsCountries = useCallback(async () => {
+        
+            const { data:response } = await api.get('/report/v1/countries');
+            setCountriesIncidents(response.data);
 
-        setIncidents(response.data)
-    }
+    }, []);
 
     useEffect(() => {
         loadIncidentsCountries();
-    }, [incidents]);
+    }, []);
 
     return (
         <>
             <Header/>
             <View style={styles.container}>   
-                <Text style={styles.title}>Bem-Vindo!</Text>
-                <Text style={styles.description}>Atualizado 20/05/2020 - 19:32, fonte: OMS</Text>
-                
                 <FlatList 
                     style={styles.incidentList}
-                    data={incidents}
+                    data={countriesIncidents}
                     keyExtractor={incident => String(incident.country)}
                     showsVerticalScrollIndicator={false}
                     renderItem={({ item: incident }) => (
@@ -60,12 +58,6 @@ export default function Countries() {
                                     <Text style={styles.incidentText}>Recuperados</Text>
                                 </View>
                             </View>
-
-                            <TouchableOpacity style={styles.detailsButton} onPress={navigateToStates}>
-                                <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
-                                <Feather name="arrow-right" size={16} color="#E02041" />
-                            </TouchableOpacity>
-
                         </View>
                     )}    
                 />

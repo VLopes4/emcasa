@@ -23,20 +23,6 @@ export default StyleSheet.create({
         color: '#737380'
     },
 
-    title: {
-        fontSize: 30,
-        marginBottom: 16,
-        marginTop: 40,
-        color: '#13131a',
-        fontWeight: 'bold',
-    },
-
-    description: {
-        fontSize: 18,
-        lineHeight: 24,
-        color: '#737380'
-    },
-
     incidentList: {
         marginTop: 32,
     },

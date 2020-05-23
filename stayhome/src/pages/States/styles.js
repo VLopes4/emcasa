@@ -7,59 +7,16 @@ export default StyleSheet.create({
         paddingTop: 15
     },
 
-    incidentCountry: {
-        paddingHorizontal: 10,
-        paddingVertical: 24,
-        borderRadius: 8,
-        backgroundColor: '#FFF',
-        marginBottom: 16,
-        borderWidth: 1,
-        borderColor: '#e8e8e8',
+    spaceState: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
     },
 
-    incidentTitleCountry: {
-        fontSize: 20,
-        color: '#41414d',
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: 20
-    },
-
-    CasesCountry: {
-        padding: 10,
-        borderRadius: 10,
-        backgroundColor: '#ffd500',
-    },
-
-    ConfirmedCountry: {
-        padding: 10,
-        borderRadius: 10,
-        backgroundColor: '#ff8800',
-    },
-
-    DeathsCountry: {
-        padding: 10,
-        borderRadius: 10,
-        backgroundColor: '#e02041',
-    },
-
-    RecoveredCountry: {
-        padding: 10,
-        borderRadius: 10,
-        backgroundColor: '#03911b',
-    },
-
-    incidentValueCountry: {
-        fontSize: 18,
-        color: '#fff',
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-
-    incidentTextCountry: {
-        fontSize: 14,
-        color: '#fff',
-        textAlign: 'center',
+    ufIncidentImage: {
+        width: 26,
+        height: 16,
+        marginTop: 6,
+        marginLeft: 'auto',
     },
 
     incidentList: {
@@ -80,7 +37,9 @@ export default StyleSheet.create({
         color: '#41414d',
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: 10
+        marginBottom: 10,
+        marginRight: 'auto',
+        marginLeft: 10,
     },
 
     incidentValue: {
